@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: password
+
+development:
+  <<: *default
+  database: existence_ror_development
+  host: localhost
+  #port: 5432
+  #schema_search_path: myapp,sharedapp,public
+  #min_messages: notice
+
+test:
+  <<: *default
+  database: existence_ror_test
+
+# production:
+#   <<: *default
+#   database: existence_ror_production
+#   username: existence_ror
+#   password: <%= ENV['EXISTENCE_ROR_DATABASE_PASSWORD'] %>
