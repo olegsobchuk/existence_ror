@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_172349) do
     t.string "position"
     t.string "rank"
     t.integer "level"
+    t.boolean "online", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     if admin && admin.authenticate(params.dig(:admin, :password))
       session[:admin] = admin.id
-      redirect admins_users_path
+      redirect_to admin_users_path
     else
       render new_sessions_path
     end

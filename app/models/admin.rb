@@ -9,7 +9,7 @@ class Admin < ApplicationRecord
   }
 
   validates :password, presence: true, confirmation: true, length: { within: 6..40 }, unless: :skip_password_validation
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :role, presence: true
   validates :login, presence: true, format: { with: %r(\A[a-zA-Z_]+\z) }
 
 

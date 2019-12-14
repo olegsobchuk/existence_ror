@@ -1,0 +1,23 @@
+= link_to 'New', new_admin_admin_path, class: 'btn btn-primary'
+%div
+  %h2 Admins
+  %table.table
+    %thead
+      %th First name
+      %th Last name
+      %th Login
+      %th Role
+    %tbody
+      - @admins.each do |admin|
+        %tr
+          %th= admin.first_name
+          %th= admin.last_name
+          %th= admin.login
+          %th= admin.role
+          %th
+            = link_to 'Edit', edit_admin_admin_path(admin), class: 'btn btn-info'
+            = link_to 'Delete',
+                      admin_admin_path(admin),
+                      method: :delete,
+                      class: 'btn btn-danger',
+                      data: { confirm: 'Are you sure?'}

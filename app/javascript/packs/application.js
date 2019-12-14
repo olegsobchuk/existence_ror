@@ -11,6 +11,7 @@ require("jquery")
 
 import '../stylesheets/application'
 import './bootstrap_custom.js'
+import './activities.js'
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

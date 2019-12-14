@@ -1,0 +1,4 @@
+- klass = @user.online? ? 'online' : 'offline'
+$("#user_#{@user.id}").removeClass('online')
+$("#user_#{@user.id}").removeClass('offline')
+$("#user_#{@user.id}").addClass("#{ klass }")

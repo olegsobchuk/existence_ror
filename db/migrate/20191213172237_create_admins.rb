@@ -6,7 +6,7 @@ class CreateAdmins < ActiveRecord::Migration[6.0]
       t.string :first_name
       t.string :last_name
       t.string :login
-      t.integer :role, default: 0
+      t.integer :role, null: false
 
       t.timestamps
     end

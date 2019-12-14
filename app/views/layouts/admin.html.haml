@@ -8,9 +8,16 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %ul.nav.nav-tabs
-      %li.nav-item
-        = link_to 'Active', 'Active', class: 'nav-link active'
-      %li.nav-item
-        = link_to 'Active', 'Active', class: 'nav-link'
-    = yield
+    .main-container{ class: "#{ controller_name }_#{ action_name }" }
+      %ul.nav.nav-tabs
+        - if current_admin.hight?
+          %li.nav-item
+            = link_to 'Users', admin_users_path, class: "nav-link #{ 'active' if controller_name == 'users' }"
+          %li.nav-item
+            = link_to 'Admins', admin_admins_path, class: "nav-link #{ 'active' if controller_name == 'admins' }"
+        %li.nav-item
+          = link_to 'Activity', admin_activities_path, class: "nav-link #{ 'active' if controller_name == 'activities' }"
+        %li.nav-item
+          = link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link'
+
+      = yield

@@ -1,1 +1,12 @@
-some
+- @users.each do |group|
+  .users-level-block
+    %center
+      - group.last.each do |user|
+        .user-badge{ id: "user_#{user.id}", class: "#{ user.online? ? 'online' : 'offline' }" }
+          %div
+            = user.full_name
+          %div
+            = user.rank
+          %div
+            = user.position
+  %hr

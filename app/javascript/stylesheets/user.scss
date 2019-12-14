@@ -1,0 +1,18 @@
+.user-badge {
+  max-width: 300px;
+  min-width: 150px;
+  border: 1px black solid;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+
+  &.online {
+    background-color: #a5e5a8;
+  }
+
+  &.offline {
+    background-color: #eac5cf;
+  }
+}

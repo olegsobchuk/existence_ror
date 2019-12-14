@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   layout 'admin'
 
-  # before_action :check_admin
+  before_action :check_admin
 
   def current_admin
     @admin ||= Admin.find_by(id: session[:admin])
@@ -11,6 +11,10 @@ class AdminController < ApplicationController
   private
 
   def check_admin
-    redirect_to sessions_new unless current_user
+    redirect_to new_sessions_path unless current_admin
+  end
+
+  def check_admin_access
+    redirect_to admin_activities_path unless current_admin.hight?
   end
 end

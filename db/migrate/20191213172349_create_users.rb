@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :position
       t.string :rank
       t.integer :level
+      t.boolean :online, default: false
 
       t.timestamps
     end
