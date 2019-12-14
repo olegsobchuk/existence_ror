@@ -19,8 +19,9 @@ test:
   <<: *default
   database: existence_ror_test
 
-# production:
-#   <<: *default
-#   database: existence_ror_production
-#   username: existence_ror
-#   password: <%= ENV['EXISTENCE_ROR_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  host: postgres
+  # database: existence_ror_production
+  # username: existence_ror
+  # password: <%= ENV['EXISTENCE_ROR_DATABASE_PASSWORD'] %>

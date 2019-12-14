@@ -1,5 +1,17 @@
 FROM ruby:2.7.0-preview3-slim-buster
 
+RUN apt-get update
+RUN apt-get -y install bash \
+        libxml2-dev \
+        build-essential \
+        patch \
+        ruby-dev \
+        zlib1g-dev \
+        liblzma-dev \
+        libpq-dev \
+        nodejs \
+        yarn
+
 ENV RAILS_ENV=production
 ENV NODE_ENV=production
 ENV SKIP_YARN_INTEGRITY_CHECK=true
