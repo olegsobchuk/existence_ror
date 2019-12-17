@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_172349) do
     t.string "first_name"
     t.string "last_name"
     t.string "login"
-    t.integer "role", default: 0
+    t.integer "role", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

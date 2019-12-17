@@ -8,12 +8,13 @@ class SessionsController < ApplicationController
       session[:admin] = admin.id
       redirect_to admin_users_path
     else
-      render new_sessions_path
+      redirect_to new_sessions_path
     end
   end
 
-  def delete
-
+  def destroy
+    session.clear
+    redirect_to new_sessions_path
   end
 
   private

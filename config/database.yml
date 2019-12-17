@@ -15,6 +15,14 @@ development:
   #schema_search_path: myapp,sharedapp,public
   #min_messages: notice
 
+# production:
+#   <<: *default
+#   database: existence_ror_development
+#   host: localhost
+#   #port: 5432
+#   #schema_search_path: myapp,sharedapp,public
+#   #min_messages: notice
+
 test:
   <<: *default
   database: existence_ror_test
@@ -22,6 +30,6 @@ test:
 production:
   <<: *default
   host: postgres
-  # database: existence_ror_production
-  # username: existence_ror
-  # password: <%= ENV['EXISTENCE_ROR_DATABASE_PASSWORD'] %>
+  database: existence_ror_production
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
