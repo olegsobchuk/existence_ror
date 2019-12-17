@@ -5,8 +5,9 @@
     %title ExistenceRor
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .main-container{ class: "#{ controller_name }_#{ action_name }" }
       %ul.nav.nav-tabs
