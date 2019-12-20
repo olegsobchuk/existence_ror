@@ -4,6 +4,9 @@ services:
     image: postgres:12.1-alpine
     env_file:
       - .env
+    volumes:
+      - ../app_store/postgresql:/var/lib/postgresql
+
     restart: always
 
   redis:
