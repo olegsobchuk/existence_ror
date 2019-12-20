@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   before_action :check_admin
 
   def current_admin
-    @admin ||= Admin.find_by(id: session[:admin])
+    @current_admin ||= Admin.find_by(id: session[:admin])
   end
   helper_method :current_admin
 

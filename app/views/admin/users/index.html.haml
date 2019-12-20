@@ -1,14 +1,14 @@
-= link_to 'New', new_admin_user_path, class: 'btn btn-primary'
+= link_to t('new'), new_admin_user_path, class: 'btn btn-primary'
 %div
-  Users
+  %h2= t('user_list')
   %table.table
     %thead
-      %th First name
-      %th Last name
-      %th Position
-      %th Rank
-      %th Level
-      %th Actions
+      %th= t('first_name')
+      %th= t('last_name')
+      %th= t('position')
+      %th= t('rank')
+      %th= t('level')
+      %th= t('actions')
     %tbody
       - @users.each do |user|
         %tr
@@ -18,9 +18,9 @@
           %th= user.rank
           %th= user.level
           %th
-            = link_to 'Edit', edit_admin_user_path(user), class: 'btn btn-info'
-            = link_to 'Delete',
+            = link_to t('edit'), edit_admin_user_path(user), class: 'btn btn-info'
+            = link_to t('delete'),
                       admin_user_path(user),
                       method: :delete,
                       class: 'btn btn-danger',
-                      data: { confirm: 'Are you sure?'}
+                      data: { confirm: t('are_you_sure') }

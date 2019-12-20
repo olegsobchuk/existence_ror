@@ -1,5 +1,6 @@
 class Admin::AdminsController < AdminController
   before_action :check_admin_access
+  before_action :admin, only: :edit
 
   def index
     @admins = Admin.all

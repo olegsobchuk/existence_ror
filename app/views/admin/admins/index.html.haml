@@ -1,13 +1,13 @@
-= link_to 'New', new_admin_admin_path, class: 'btn btn-primary'
+= link_to t('new'), new_admin_admin_path, class: 'btn btn-primary'
 %div
-  %h2 Admins
+  %h2= t('admin_list')
   %table.table
     %thead
-      %th First name
-      %th Last name
-      %th Login
-      %th Role
-      %th Actions
+      %th= t('first_name')
+      %th= t('last_name')
+      %th= t('login')
+      %th= t('role')
+      %th= t('actions')
     %tbody
       - @admins.each do |admin|
         %tr
@@ -16,9 +16,9 @@
           %th= admin.login
           %th= admin.role
           %th
-            = link_to 'Edit', edit_admin_admin_path(admin), class: 'btn btn-info'
-            = link_to 'Delete',
+            = link_to t('edit'), edit_admin_admin_path(admin), class: 'btn btn-info'
+            = link_to t('delete'),
                       admin_admin_path(admin),
                       method: :delete,
                       class: 'btn btn-danger',
-                      data: { confirm: 'Are you sure?'}
+                      data: { confirm: t('are_you_sure') }

@@ -1,7 +1,7 @@
 = simple_form_for @admin, url: sessions_path do |f|
   .form-group
-    = f.input :login, input_html: { class: 'form-control' }
+    = f.input :login, label: t('login'), input_html: { class: 'form-control' }
   .form-group
-    = f.input :password, input_html: { class: 'form-control' }
+    = f.input :password, label: t('password'), input_html: { class: 'form-control' }
   .form-group
-    = f.submit :submit, class: 'btn btn-primary'
+    = f.submit t('submit'), class: 'btn btn-primary'
