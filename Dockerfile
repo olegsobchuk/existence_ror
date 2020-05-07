@@ -1,4 +1,4 @@
-FROM ruby:2.7.0-preview3-slim-buster
+FROM ruby:2.6.6-slim-buster
 
 RUN apt-get update
 RUN apt-get -y install bash \
@@ -26,6 +26,7 @@ ENV RAILS_MASTER_KEY=21541b3c4ad012c663caa97a6ef9ff12
 WORKDIR /app
 COPY . /app
 
+RUN gem update bundler
 RUN bundle install -j4
 RUN yarn install
 RUN bundle exec rails assets:precompile
